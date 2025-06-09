@@ -1,0 +1,8 @@
+name: Practise Metadata Project
+on: push
+jobs:
+  output-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output metadata
+        run: echo "${{ toJSON(github) }}"
