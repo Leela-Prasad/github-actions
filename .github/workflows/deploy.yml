@@ -1,4 +1,4 @@
-name: Deploy Project
+name: Practise Project
 on: push
 jobs:
   lint:
@@ -7,7 +7,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: Install Dependencies
-        uses: npm ci
+        run: npm ci
       - name: Lint
         run: npm run lint
 
