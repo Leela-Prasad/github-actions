@@ -1,7 +1,8 @@
 name: Practise Project
 on:
   pull_request:
-    - opened
+    types:
+      - opened
   workflow_dispatch:
 jobs:
   lint:
