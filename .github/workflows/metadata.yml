@@ -1,4 +1,4 @@
-name: Display Event Project
+name: Practise Metadata Project
 on: issues
 jobs:
   output-context:
