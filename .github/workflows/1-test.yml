@@ -69,3 +69,13 @@ jobs:
         run: echo ${{ needs.build.outputs.script-file-name }}
       - name: Deploy
         run: echo "Deploying..."
+
+  report:
+    needs: deploy
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output information
+        run: |
+          echo "Something went wrong"
+          echo ${{ toJSON(github) }}
