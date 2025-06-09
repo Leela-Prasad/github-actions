@@ -1,9 +1,7 @@
 name: Practise Project
 on:
-  pull_request:
-    types:
-      - opened
-  workflow_dispatch:
+  - push
+  - workflow_dispatch
 jobs:
   lint:
     runs-on: ubuntu-latest
