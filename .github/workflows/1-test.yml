@@ -66,6 +66,8 @@ jobs:
     with:
       artifact-name: dist-files
     secrets: inherit
+#    secrets:
+#      some-secret: ${{ secrets.SOME_SECRET }}
 
   report:
     needs: deploy
