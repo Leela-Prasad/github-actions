@@ -66,8 +66,15 @@ jobs:
     with:
       artifact-name: dist-files
     secrets: inherit
-#    secrets:
-#      some-secret: ${{ secrets.SOME_SECRET }}
+  #    secrets:
+  #      some-secret: ${{ secrets.SOME_SECRET }}
+
+  print-deploy-result:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: print deploy output
+        run: echo "${{ needs.deploy.outputs.result }}"
 
   report:
     needs: deploy

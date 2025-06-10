@@ -7,6 +7,10 @@ on:
         required: true
         type: string
         default: dist
+    outputs:
+      result:
+        description: result of the deployment operation
+        value: ${{ jobs.deploy.outputs.outcome }}
     secrets:
       SOME_SECRET:
         required: true
@@ -16,6 +20,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    outputs:
+      outcome: ${{ steps.set-result.outputs.step-result }}
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v4
@@ -29,5 +35,7 @@ jobs:
         run: |
           echo "Deploying & uploading ..."
           echo "${{ toJSON(github) }}"
+      - name: set result output
+        id: set-result
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
           
-        
