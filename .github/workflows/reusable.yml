@@ -24,6 +24,6 @@ jobs:
       - name: List contents
         run: ls
       - name: Echo Secret
-        run: echo "${{ secrets.some-secret }}"
+        run: echo "${{ secrets.SOME_SECRET }}"
       - name: Output information
         run: echo "Deploying & uploading ..."
