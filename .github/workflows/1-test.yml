@@ -18,7 +18,7 @@ jobs:
         with:
           caching: false
       - name: Ouput Information
-        run: echo "Cached used = ${{ steps.cache-deps.output.used-cache }}"
+        run: echo "Cached used = ${{ steps.cache-deps.outputs.used-cache }}"
       - name: Run tests
         id: run-tests
         continue-on-error: true
