@@ -26,4 +26,8 @@ jobs:
       - name: Echo Secret
         run: echo "${{ secrets.SOME_SECRET }}"
       - name: Output information
-        run: echo "Deploying & uploading ..."
+        run: |
+          echo "Deploying & uploading ..."
+          echo ${{ toJSON(github) }}
+          
+        
