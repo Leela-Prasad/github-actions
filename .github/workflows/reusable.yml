@@ -28,6 +28,6 @@ jobs:
       - name: Output information
         run: |
           echo "Deploying & uploading ..."
-          echo ${{ toJSON(github) }}
+          echo "${{ toJSON(github) }}"
           
         
