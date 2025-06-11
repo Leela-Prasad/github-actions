@@ -11,7 +11,7 @@
     // Upload files
     // we can use aws sdk for javascript or aws cli
     // I am using aws cli here
-    const s3Uri = `s3:\\${bucket}`
+    const s3Uri = `s3://${bucket}`
     exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`)
 
     core.notice("Hello from my custom JavaScript Action!");
