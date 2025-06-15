@@ -73,7 +73,7 @@ jobs:
           bucket-region: ap-south-1
           dist-folder: ./dist
       - name: show output info
-        echo: "Live URL: ${{ steps.deploy.outputs.website-url }}"
+        run: echo "Live URL = ${{ steps.deploy.outputs.website-url }}"
 
 
 
