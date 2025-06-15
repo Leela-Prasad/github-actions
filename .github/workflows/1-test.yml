@@ -63,6 +63,7 @@ jobs:
           name: dist-files
           path: ./dist
       - name: Deploy site
+        id: deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -71,14 +72,17 @@ jobs:
           bucket: gha-website-hosting-bucket
           bucket-region: ap-south-1
           dist-folder: ./dist
+      - name: show output info
+        echo: "Live URL: ${{ steps.deploy.outputs.website-url }}"
+
 
 
   #  deploy:
-#    needs: build
-#    uses: ./.github/workflows/reusable.yml
-#    with:
-#      artifact-name: dist-files
-#    secrets: inherit
+  #    needs: build
+  #    uses: ./.github/workflows/reusable.yml
+  #    with:
+  #      artifact-name: dist-files
+  #    secrets: inherit
   #    secrets:
   #      some-secret: ${{ secrets.SOME_SECRET }}
 
